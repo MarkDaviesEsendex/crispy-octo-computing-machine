@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.WebJobs">
+      <HintPath>..\..\..\..\.nuget\packages\microsoft.azure.webjobs.core\3.0.0\lib\netstandard2.0\Microsoft.Azure.WebJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.WebJobs.Host">
+      <HintPath>..\..\..\..\.nuget\packages\microsoft.azure.webjobs\3.0.0\lib\netstandard2.0\Microsoft.Azure.WebJobs.Host.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
