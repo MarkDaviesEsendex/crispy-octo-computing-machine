@@ -1,7 +1,5 @@
-using System.IO;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
 using Extensions;
+using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
@@ -19,16 +17,7 @@ namespace FunctionApp3
             ILogger log)
         {
             log.LogInformation(testService.Greet());
-
-            string name = req.Query["name"];
-
-            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+            return new OkObjectResult(testService.Greet());
         }
     }
 }
